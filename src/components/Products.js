@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 export const Products = ({ data, cartModalHandler }) => {
 
-    const title = data.title?.split(' ').slice(0, 5).join(' ')
+    const title = data.title.split(' ').slice(0, 5).join(' ')
     const { cartItems, dispatch } = useContext(CartContext)
 
     const addToCart = () => {
