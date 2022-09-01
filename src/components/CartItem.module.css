@@ -1,0 +1,17 @@
+.cartItem {
+    display: flex;
+    margin-top: 25px;
+}
+
+.trashImg{
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.cartInner{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}

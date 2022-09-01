@@ -1,0 +1,24 @@
+.mainWrapper{
+    display: flex;
+    width: 75%;
+    margin: 0 auto;
+}
+.productWrapper {
+    display: flex;
+    margin-top: 150px;
+}
+.images {
+    width: 500px;
+    height: 500px;
+}
+.description {
+    margin-left: 80px;
+}
+
+.text {
+    line-height: 1.8;
+    font-size: 1.2rem;
+    word-spacing: 1.4px;
+    letter-spacing: 1.2px;
+    font-family: cursive;
+}

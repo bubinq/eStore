@@ -1,0 +1,74 @@
+.cartOverlay{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.325);
+}
+
+.cartModal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    min-width: 17%;
+    max-width: 17%;
+    min-height: 100vh;
+    background-color: #ffffff;
+    padding: 14px;
+}
+
+.cartHeading{
+    display: flex;
+    justify-content: space-between;
+}
+
+.heading{
+    margin-top: 0;
+    margin-left: 12px;
+}
+
+.closeModal{
+    margin-top: 13px;
+    border: none;
+    background-color: #ffffff;
+    font-size: 1.3rem;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.cartItems {
+    position: relative;
+    overflow: auto;
+    min-width: 80%;
+    height: 540px;
+}
+
+.totalWrapper {
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.buy {
+    margin-top: 10px;
+    width: 100%;
+}
+.purchaseBtn {
+    border: none;
+    width: 100%;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    border-radius: 4px;
+    background-color: #00B0FF;
+    color: white;
+    padding: 10px 26px;
+    letter-spacing: 1.3px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.purchaseBtn:hover{
+    background-color: #0199e0;
+}
