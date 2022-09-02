@@ -2,6 +2,7 @@ import styles from './Catalog.module.css'
 import { Products } from './Products'
 import { Cart } from './Cart'
 import { useState, useEffect } from 'react'
+import { getProducts } from '../services/firebaseAPI'
 
 export const Catalog = () => {
 
@@ -11,16 +12,12 @@ export const Catalog = () => {
     const cartModalHandler = () => {
         setShowCartModal(!showCartModal)
     }
-    const fetchData = async () => {
-        const response = await fetch('https://fakestoreapi.com/products')
-        return response
-    }
 
     useEffect(() => {
-        fetchData()
-            .then(res => res.json())
+        getProducts()
             .then((data) => {
-                setLocalData(data)
+                const response = data.docs.map(doc => ({ ...doc.data(), id: doc.id }))
+                setLocalData(response)
             })
 
     }, [])

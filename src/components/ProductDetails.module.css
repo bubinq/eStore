@@ -1,5 +1,6 @@
 .mainWrapper{
     display: flex;
+    flex-direction: column;
     width: 75%;
     margin: 0 auto;
 }
@@ -21,4 +22,72 @@
     word-spacing: 1.4px;
     letter-spacing: 1.2px;
     font-family: cursive;
+}
+
+.formWrapper {
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form{
+    width: 80%;
+}
+
+.inputUser {
+    margin-top: 10px;
+    width: 100%;
+    padding: 14px 8px;
+}
+.inputComment {
+    margin-top: 10px;
+    width: 100%;
+    max-width: 100%;
+    padding: 14px 8px;
+}
+
+.inputFields {
+    display: flex;
+    flex-direction: column;
+}
+
+.firstInput{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.sendBtn{
+    border: none;
+    width: 20%;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    border-radius: 4px;
+    background-color: #00B0FF;
+    color: white;
+    padding: 10px 26px;
+    letter-spacing: 1.3px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.sendBtn:hover{
+    background-color: #0199e0;
+}
+.reviewBtn {
+    border: none;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    border-radius: 4px;
+    background-color: #00B0FF;
+    color: white;
+    padding: 10px 26px;
+    letter-spacing: 1.3px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.reviewBtn:hover {
+    background-color: #0199e0;
 }
