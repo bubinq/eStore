@@ -9,9 +9,10 @@ export const Products = ({ data, cartModalHandler }) => {
 
     const { cartItems, dispatch } = useContext(CartContext)
 
+
     const addToCart = () => {
         const cartItem = cartItems.find(item => item.id === data.id)
-        // TODO add firebase API
+
         if (cartItem) {
             getProduct(data.id)
                 .then((res) => {
@@ -24,7 +25,6 @@ export const Products = ({ data, cartModalHandler }) => {
                 })
 
         } else {
-            console.log('Here')
             getProduct(data.id)
                 .then((res) => {
                     dispatch({

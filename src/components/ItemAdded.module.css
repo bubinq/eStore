@@ -1,0 +1,18 @@
+.itemAdded, .itemRemoved{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 8px;
+    width: 310px;
+    height: 45px;
+    margin: 0 auto;
+    background-color: rgb(148, 255, 200);
+    letter-spacing: 1.2px;
+    font-size: 1.2rem;
+}
+
+.alertText{
+    position: absolute;
+    top: 0;
+    color: rgb(12, 105, 85);
+}
