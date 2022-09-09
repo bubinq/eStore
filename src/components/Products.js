@@ -33,6 +33,7 @@ export const Products = ({ data, cartModalHandler }) => {
                         qty: 1,
                         id: res.id
                     })
+                    
                 })
 
         }

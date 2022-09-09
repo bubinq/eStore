@@ -66,7 +66,7 @@ export const Catalog = () => {
         return (
             <Spinner></Spinner>
         )
-    
+
     } else {
         return (
             <div>
@@ -74,19 +74,24 @@ export const Catalog = () => {
                     {user ?
                         <div className={styles.loginWrapper}>
                             <h3 className={styles.welcomeMsg}>Welcome, {user.email}</h3>
+                            <Link to='/' onClick={cartModalHandler}><img src="shopping.svg" className={styles.shoppingBasket} alt='Prosto snimka'></img></Link>
                             <Link to='/' onClick={logoutHandler} className={styles.logOut}>Log Out</Link>
                         </div>
                         :
-                        <Link to='/' onClick={() => setToggleModal(!toggleModal)} className={styles.logIn}>Log In</Link>
-    
+                        <div className={styles.loginWrapper}>
+                            <Link to='/' onClick={cartModalHandler}><img src="shopping.svg" className={styles.shoppingBasket} alt='Prosto snimka'></img></Link>
+                            <Link to='/' onClick={() => setToggleModal(!toggleModal)} className={styles.logIn}>Log In</Link>
+                        </div>
+
                     }
+
                     {toggleModal &&
                         <View switchHandler={switchFormHandler} showModalHandler={toggleModalHandler} />
                     }
                 </header>
                 <h1 className={styles.logo}>Our Products</h1>
                 <div className={styles.mainWrapper}>
-    
+
                     {localData.length > 0 ?
                         localData.map(data => <Products key={data.title} data={data} cartModalHandler={cartModalHandler}></Products>)
                         :
@@ -100,5 +105,5 @@ export const Catalog = () => {
         )
     }
 
-   
+
 }

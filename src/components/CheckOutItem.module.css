@@ -1,0 +1,54 @@
+.items {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+
+}
+
+.itemWrapper {
+    display: flex;
+
+}
+
+.imgBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: 1px solid rgb(190, 190, 190);
+}
+
+.img {
+    width: 50px;
+    height: 50px;
+}
+
+.horizontalLine {
+    margin-top: 25px;
+    width: 95%;
+    height: 1px;
+    background-color: rgb(201, 201, 201);
+    margin-bottom: 10px;
+}
+
+.text {
+    margin-left: 18px;
+}
+
+.circle {
+    width: 23px;
+    height: 23px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(124, 123, 123);
+    color: white;
+    text-align: center;
+    border-radius: 50%;
+    right: -10px;
+    top: -10px;
+}

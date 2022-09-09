@@ -1,4 +1,5 @@
-import { createContext, useReducer } from "react";
+import { createContext, useEffect, useReducer } from "react";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 
 export const CartContext = createContext()
@@ -19,8 +20,21 @@ function cartManager(state, action) {
     }
 }
 
+function initStorage () {
+    const storage = localStorage.getItem('cartStorage')
+    const initialize = JSON.parse(storage) || []
+    return initialize
+    
+}
+
 export const CartProvider = ({ children }) => {
-    const [cartItems, dispatch] = useReducer(cartManager, [])
+    const [cartItems, dispatch] = useReducer(cartManager, [], initStorage)
+    const [localStorage, setLocalStorage] = useLocalStorage('cartStorage', [])
+
+    useEffect(() => {
+        setLocalStorage(cartItems)
+        console.log(localStorage)
+    }, [cartItems, localStorage, setLocalStorage])
 
     return (
         <CartContext.Provider value={{ cartItems, dispatch }}>

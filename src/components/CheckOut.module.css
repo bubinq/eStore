@@ -1,0 +1,165 @@
+.checkOutPage {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+}
+
+.mainWrapper {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.profileData {
+    max-width: 1224px;
+    min-width: 744px;
+}
+
+.emblems {
+    background-color: #eff4f6;
+    min-width: 420px;
+}
+
+.names {
+    display: flex;
+}
+
+.name,
+.surname {
+    padding-top : 16px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 8px;
+    outline: solid rgb(150, 150, 150) 2px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+.name {
+    width: 86%;
+}
+.surname {
+    width: 84%;
+}
+.name:focus, .surname:focus {
+    transition: all 0.3s ease;
+    border: none;
+    outline: solid #00B0FF 2px;
+}
+
+.nameWrapper {
+    position: relative;
+    width: 50%;
+    margin-top: 18px;
+}
+.surnameWrapper {
+    position: relative;
+    width: 50%;
+    margin-top: 18px;
+}
+
+.inputWrappers {
+    display: flex;
+    position: relative;
+    margin-top: 18px;
+}
+
+.inputFields {
+    padding-top: 16px;
+    padding-bottom: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    outline: solid rgb(150, 150, 150) 2px;
+    width: 92%;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    transition: all 0.35s ease;
+}
+
+.inputFields:focus {
+    transition: all 0.3s ease;
+    border: none;
+    outline: solid #00B0FF 2px;
+}
+
+.inputFields:-webkit-autofill {
+  -webkit-text-fill-color: black;
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.labels {
+    position: absolute;
+    top: 30%;
+    left: 10px;
+    z-index: 1;
+    transition: all 0.3s ease;
+    caret-color: transparent;
+    color: rgb(125, 125, 125);
+}
+
+.headings {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    letter-spacing: 1.2px;
+}
+
+.focused {
+    position: absolute;
+    color: rgb(125, 125, 125);
+    top: 0;
+    left: 10px;
+    z-index: 1;
+    transition: all 0.25s ease;
+}
+
+.rim {
+    width: 92%;
+    border-radius: 4px;
+    border: 1px solid rgb(222, 222, 222);
+}
+.totalWrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.subtotal, .shipping, .finalTotal {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+}
+.shipping {
+    margin-top: 10px;
+}
+.hR {
+    margin-top: 25px;
+    width: 95%;
+    height: 1px;
+    background-color: rgb(201, 201, 201);
+    margin-bottom: 10px;
+}
+
+.checkBoxWrapper {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.orderBtn {
+    background-color: #023047;
+    color: white;
+    text-transform: uppercase;
+    font-size: 2.1rem;
+    letter-spacing: 1.3px;
+    width: 96%;
+    margin-bottom: 40px;
+    padding: 10px 0px;
+    cursor: pointer;
+}

@@ -1,9 +1,11 @@
 import { useContext, useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { CartContext } from '../contexts/CartContext'
 import styles from './Cart.module.css'
 import { CartItem } from './CartItem'
 import { ItemAdded } from './ItemAdded'
 import { ItemRemoved } from './ItemRemoved'
+
 
 export const Cart = ({ cartModalHandler }) => {
     const { cartItems } = useContext(CartContext)
@@ -11,10 +13,16 @@ export const Cart = ({ cartModalHandler }) => {
     const [itemIsRemoved, setItemIsRemoved] = useState(false)
     const [itemsLenght, setItemsLenght] = useState(cartItems.length)
 
+
+    const navigateTo = useNavigate()
     const total = cartItems.reduce((prev, curr) => (prev) + (curr.price * curr.qty), 0)
 
+    const goToCheckout = () => {
+        navigateTo('/checkout')
+    }
+
     useEffect(() => {
-        if (itemsLenght <= cartItems.length) {
+        if (itemsLenght < cartItems.length) {
             setItemsLenght(cartItems.length)
             setItemIsAdded(true)
             setTimeout(() => {
@@ -63,7 +71,7 @@ export const Cart = ({ cartModalHandler }) => {
                             <span><b>{total.toFixed(2)}$</b></span>
                         </div>
                         <div className={styles.buy}>
-                            <button className={styles.purchaseBtn}>Buy</button>
+                            <button className={styles.purchaseBtn} onClick={goToCheckout}>Order</button>
                         </div>
                     </>
                     :
