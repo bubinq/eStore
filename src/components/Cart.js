@@ -27,13 +27,13 @@ export const Cart = ({ cartModalHandler }) => {
             setItemIsAdded(true)
             setTimeout(() => {
                 setItemIsAdded(false)
-            }, 2500)
+            }, 3000)
         } else if (itemsLenght > cartItems.length) {
             setItemsLenght(cartItems.length)
             setItemIsRemoved(true)
             setTimeout(() => {
                 setItemIsRemoved(false)
-            }, 2500)
+            }, 3000)
         }
 
     }, [cartItems, itemsLenght])
