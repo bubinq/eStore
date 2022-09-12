@@ -7,11 +7,14 @@ import { DisplayPages } from "./DisplayPages"
 import { Spinner } from "./Spinner"
 import { Cart } from "./Cart"
 import { CartContext } from "../contexts/CartContext"
+import { getAuth } from 'firebase/auth'
+import { FaStar } from 'react-icons/fa'
 
 
 export const ProductDetails = () => {
 
     const productId = useParams()
+    const user = getAuth()
     const finalId = productId.productId
     const { cartItems, dispatch } = useContext(CartContext)
 
@@ -21,9 +24,11 @@ export const ProductDetails = () => {
     const [commentAdded, setCommentAdded] = useState(true)
     const [showCartModal, setShowCartModal] = useState(false)
     const [numPages, setNumPages] = useState([])
+    const [rate, setRate] = useState(null)
     const [userComment, setUserComment] = useState({
         'user': '',
         'comment': '',
+        'rating': '',
         'id': finalId
     })
 
@@ -146,9 +151,11 @@ export const ProductDetails = () => {
                 </div>
                 <div className={styles.formWrapper}>
                     <h1>Customer Reviews</h1>
-                    <div className={styles.reviewWrapper}>
-                        <button className={styles.reviewBtn} onClick={toggleCommentForm}>{isWriting ? 'Hide section' : 'Write a comment'}</button>
-                    </div>
+                    {user.currentUser &&
+                        <div className={styles.reviewWrapper}>
+                            <button className={styles.reviewBtn} onClick={toggleCommentForm}>{isWriting ? 'Hide section' : 'Write a comment'}</button>
+                        </div>
+                    }
 
                     {isWriting &&
                         <form onSubmit={addCommentHandler} className={styles.form}>
@@ -164,6 +171,22 @@ export const ProductDetails = () => {
                                         required
                                     >
                                     </input>
+                                </div>
+                                <div className={styles.firstInput}>
+                                    <label>Rating</label>
+                                    <div className={styles.starWrapper}>
+                                        {[...Array(5)].map((star, idx) =>
+                                            <label key={idx} onClick={() => setRate(idx + 1)} onMouseEnter={() => setRate(idx + 1)} onMouseLeave={() => setRate(idx + 1)}>
+                                                <FaStar size={25} className={styles.star} style={{ color: idx < rate ? 'rgb(255, 232, 58)' : 'gray' }}></FaStar>
+                                                <input
+                                                    type='radio'
+                                                    value={idx + 1}
+                                                    onChange={(ev) => { setUserComment(oldComment => ({ ...oldComment, rating: ev.target.value })) }}
+                                                >
+
+                                                </input>
+                                            </label>)}
+                                    </div>
                                 </div>
                                 <div className={styles.firstInput}>
                                     <label htmlFor='comment'>Comment</label>

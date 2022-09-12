@@ -8,11 +8,29 @@
 }
 
 .date {
-    margin-top: 20px;
-    margin-left: 12px;
+    margin-top: 10px;
+    margin-left: -15px;
 }
 
 .comment {
     font-size: 1.1rem;
     letter-spacing: 1.2px;
+}
+
+.authorized {
+    display: flex;
+    align-items: center;
+    background-color: rgb(16, 14, 54);
+    color: white;
+    height: fit-content;
+    padding-right: 3px;
+    padding-left: 3px;
+    padding-bottom: 3px;
+}
+
+.ratingWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
 }

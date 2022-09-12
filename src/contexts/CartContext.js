@@ -33,7 +33,6 @@ export const CartProvider = ({ children }) => {
 
     useEffect(() => {
         setLocalStorage(cartItems)
-        console.log(localStorage)
     }, [cartItems, localStorage, setLocalStorage])
 
     return (

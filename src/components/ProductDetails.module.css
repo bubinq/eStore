@@ -74,6 +74,7 @@
     letter-spacing: 1.3px;
     transition: all 0.3s ease;
     cursor: pointer;
+    margin-bottom: 20px;
 }
 
 .sendBtn:hover{
@@ -122,4 +123,19 @@
 
 .addToCart:hover{
     background-color: #0199e0;
+}
+
+.starWrapper {
+    display: flex;
+    margin-top: 10px;
+}
+
+.starWrapper input {
+    display: none;
+}
+
+.star {
+    margin-left: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
