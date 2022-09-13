@@ -38,7 +38,7 @@ export const PaymentForm = () => {
 
     const handleCashPayment = (ev) => {
         ev.preventDefault()
-        console.log('Success')
+        navigateTo('/success', { replace: true })
     }
 
     const handleCardPayment = async (ev) => {

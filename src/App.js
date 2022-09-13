@@ -4,7 +4,7 @@ import { ProductDetails } from './components/ProductDetails'
 import { PrivateGuard } from './guards/PrivateGuard';
 import { ErrorPage } from './components/ErrorPage';
 import { StripeContainer } from './components/StripeContainer';
-import {SuccessPage} from './components/SuccessPage'
+import { SuccessPage } from './components/SuccessPage'
 
 function App() {
     return (
