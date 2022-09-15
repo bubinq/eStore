@@ -1,16 +1,18 @@
 import { Route, Routes } from 'react-router-dom'
-import { Catalog } from './components/Catalog'
+import { Store } from './components/Store'
 import { ProductDetails } from './components/ProductDetails'
 import { PrivateGuard } from './guards/PrivateGuard';
 import { ErrorPage } from './components/ErrorPage';
 import { StripeContainer } from './components/StripeContainer';
 import { SuccessPage } from './components/SuccessPage'
+import { HomePage } from './components/HomePage'
 
 function App() {
     return (
         <div className="App">
             <Routes>
-                <Route path="/" element={<Catalog />}></Route>
+                <Route path='/' element={<HomePage />}></Route>
+                <Route path="/store" element={<Store />}></Route>
                 <Route path='/products/:productId' element={<ProductDetails />}></Route>
                 <Route element={<PrivateGuard />}>
                     <Route path='/checkout' element={<StripeContainer />}></Route>

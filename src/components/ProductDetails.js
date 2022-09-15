@@ -9,6 +9,7 @@ import { Cart } from "./Cart"
 import { CartContext } from "../contexts/CartContext"
 import { getAuth } from 'firebase/auth'
 import { FaStar } from 'react-icons/fa'
+import { Navigation } from "./Navigation"
 
 
 export const ProductDetails = () => {
@@ -136,92 +137,94 @@ export const ProductDetails = () => {
         )
     } else {
         return (
-            <div className={styles.mainWrapper}>
-                <div className={styles.productWrapper}>
-                    <img src={localProduct.image} alt='Prosto snimka' className={styles.images}></img>
-                    <div className={styles.description}>
-                        <h1 className={styles.header}>{localProduct.title}</h1>
-                        <p className={styles.text}>{localProduct.description}</p>
-                        <hr></hr>
-                        <span className={styles.price}>{Number(localProduct.price).toFixed(2)}$</span>
-                        <div className={styles.buttonsWrapper} onClick={cartModalHandler}>
-                            <button className={styles.addToCart} onClick={addToCart}>Add to cart</button>
+            <>
+                <Navigation></Navigation>
+                <div className={styles.mainWrapper}>
+                    <div className={styles.productWrapper}>
+                        <img src={localProduct.image} alt='Prosto snimka' className={styles.images}></img>
+                        <div className={styles.description}>
+                            <h1 className={styles.header}>{localProduct.title}</h1>
+                            <p className={styles.text}>{localProduct.description}</p>
+                            <hr></hr>
+                            <span className={styles.price}>{Number(localProduct.price).toFixed(2)}$</span>
+                            <div className={styles.buttonsWrapper} onClick={cartModalHandler}>
+                                <button className={styles.addToCart} onClick={addToCart}>Add to cart</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className={styles.formWrapper}>
-                    <h1>Customer Reviews</h1>
-                    {user.currentUser &&
-                        <div className={styles.reviewWrapper}>
-                            <button className={styles.reviewBtn} onClick={toggleCommentForm}>{isWriting ? 'Hide section' : 'Write a comment'}</button>
-                        </div>
-                    }
+                    <div className={styles.formWrapper}>
+                        <h1>Customer Reviews</h1>
+                        {user.currentUser &&
+                            <div className={styles.reviewWrapper}>
+                                <button className={styles.reviewBtn} onClick={toggleCommentForm}>{isWriting ? 'Hide section' : 'Write a comment'}</button>
+                            </div>
+                        }
 
-                    {isWriting &&
-                        <form onSubmit={addCommentHandler} className={styles.form}>
-                            <div className={styles.inputFields}>
-                                <div className={styles.firstInput}>
-                                    <label htmlFor='username'>Name</label>
-                                    <input
-                                        type='text'
-                                        placeholder='Your name *'
-                                        name='username'
-                                        className={styles.inputUser}
-                                        onChange={(ev) => { setUserComment(oldComment => ({ ...oldComment, user: ev.target.value })) }}
-                                        required
-                                    >
-                                    </input>
-                                </div>
-                                <div className={styles.firstInput}>
-                                    <label>Rating</label>
-                                    <div className={styles.starWrapper}>
-                                        {[...Array(5)].map((star, idx) =>
-                                            <label key={idx} onClick={() => setRate(idx + 1)} onMouseEnter={() => setRate(idx + 1)} onMouseLeave={() => setRate(idx + 1)}>
-                                                <FaStar size={25} className={styles.star} style={{ color: idx < rate ? 'rgb(255, 232, 58)' : 'gray' }}></FaStar>
-                                                <input
-                                                    type='radio'
-                                                    value={idx + 1}
-                                                    onChange={(ev) => { setUserComment(oldComment => ({ ...oldComment, rating: ev.target.value })) }}
-                                                >
+                        {isWriting &&
+                            <form onSubmit={addCommentHandler} className={styles.form}>
+                                <div className={styles.inputFields}>
+                                    <div className={styles.firstInput}>
+                                        <label htmlFor='username'>Name</label>
+                                        <input
+                                            type='text'
+                                            placeholder='Your name *'
+                                            name='username'
+                                            className={styles.inputUser}
+                                            onChange={(ev) => { setUserComment(oldComment => ({ ...oldComment, user: ev.target.value })) }}
+                                            required
+                                        >
+                                        </input>
+                                    </div>
+                                    <div className={styles.firstInput}>
+                                        <label>Rating</label>
+                                        <div className={styles.starWrapper}>
+                                            {[...Array(5)].map((star, idx) =>
+                                                <label key={idx} onClick={() => setRate(idx + 1)} onMouseEnter={() => setRate(idx + 1)} onMouseLeave={() => setRate(idx + 1)}>
+                                                    <FaStar size={25} className={styles.star} style={{ color: idx < rate ? 'rgb(255, 232, 58)' : 'gray' }}></FaStar>
+                                                    <input
+                                                        type='radio'
+                                                        value={idx + 1}
+                                                        onChange={(ev) => { setUserComment(oldComment => ({ ...oldComment, rating: ev.target.value })) }}
+                                                    >
 
-                                                </input>
-                                            </label>)}
+                                                    </input>
+                                                </label>)}
+                                        </div>
+                                    </div>
+                                    <div className={styles.firstInput}>
+                                        <label htmlFor='comment'>Comment</label>
+                                        <textarea
+                                            name='comment'
+                                            placeholder='Write your comment here *'
+                                            className={styles.inputComment}
+                                            onChange={(ev) => { setUserComment(oldComment => ({ ...oldComment, comment: ev.target.value })) }}
+                                            required
+                                        >
+                                        </textarea>
+                                    </div>
+
+                                    <div className={styles.firstInput}>
+                                        <input type='submit'
+                                            value='SEND'
+                                            className={styles.sendBtn}
+                                        >
+                                        </input>
                                     </div>
                                 </div>
-                                <div className={styles.firstInput}>
-                                    <label htmlFor='comment'>Comment</label>
-                                    <textarea
-                                        name='comment'
-                                        placeholder='Write your comment here *'
-                                        className={styles.inputComment}
-                                        onChange={(ev) => { setUserComment(oldComment => ({ ...oldComment, comment: ev.target.value })) }}
-                                        required
-                                    >
-                                    </textarea>
-                                </div>
+                            </form>
+                        }
 
-                                <div className={styles.firstInput}>
-                                    <input type='submit'
-                                        value='SEND'
-                                        className={styles.sendBtn}
-                                    >
-                                    </input>
-                                </div>
-                            </div>
-                        </form>
+                    </div>
+
+                    {productComments.map(comment => <Comment key={comment.comment} comment={comment}></Comment>)}
+                    <div className={styles.pageWrapper}>
+                        {numPages.map((page, idx) => <DisplayPages key={idx} idx={idx} page={page} goToPage={goToPage}></DisplayPages>)}
+                    </div>
+                    {showCartModal &&
+                        <Cart cartModalHandler={cartModalHandler}></Cart>
                     }
 
-                </div>
-
-                {productComments.map(comment => <Comment key={comment.comment} comment={comment}></Comment>)}
-                <div className={styles.pageWrapper}>
-                    {numPages.map((page, idx) => <DisplayPages key={idx} idx={idx} page={page} goToPage={goToPage}></DisplayPages>)}
-                </div>
-                {showCartModal &&
-                    <Cart cartModalHandler={cartModalHandler}></Cart>
-                }
-
-            </div>
+                </div></>
         )
     }
 

@@ -1,4 +1,4 @@
-import { createContext, useEffect, useReducer } from "react";
+import { createContext, useEffect, useReducer, useState } from "react";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 
 
@@ -15,6 +15,9 @@ function cartManager(state, action) {
         case 'DELETE_CART_ITEM':
             return state.filter(oldCarts => oldCarts.id !== action.id)
 
+        case 'RESET':
+            return state.filter(oldCarts => oldCarts.id === action.id)
+
         default:
             break;
     }
@@ -30,13 +33,18 @@ function initStorage () {
 export const CartProvider = ({ children }) => {
     const [cartItems, dispatch] = useReducer(cartManager, [], initStorage)
     const [localStorage, setLocalStorage] = useLocalStorage('cartStorage', [])
+    const [showCartModal, setShowCartModal] = useState(false)
+
+    const cartModalHandler = () => {
+        setShowCartModal(!showCartModal)
+    }
 
     useEffect(() => {
         setLocalStorage(cartItems)
     }, [cartItems, localStorage, setLocalStorage])
 
     return (
-        <CartContext.Provider value={{ cartItems, dispatch }}>
+        <CartContext.Provider value={{ cartItems, dispatch, cartModalHandler, showCartModal }}>
             {children}
         </CartContext.Provider>
     )

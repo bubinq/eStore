@@ -32,13 +32,17 @@ export const PaymentForm = () => {
     const stripe = useStripe()
     const elements = useElements()
 
-    const { cartItems } = useContext(CartContext)
+    const { cartItems, dispatch } = useContext(CartContext)
     const total = cartItems.reduce((prev, curr) => (prev) + (curr.price * curr.qty), 0)
     const [shippingPrice, setShippingPrice] = useState(3.14)
 
     const handleCashPayment = (ev) => {
         ev.preventDefault()
         navigateTo('/success', { replace: true })
+        dispatch({
+            type: 'RESET',
+            id: 'reset'
+        })
     }
 
     const handleCardPayment = async (ev) => {
@@ -59,6 +63,10 @@ export const PaymentForm = () => {
                 if (response.data.success) {
                     setIsLoading(false)
                     navigateTo('/success', { replace: true })
+                    dispatch({
+                        type: 'RESET',
+                        id: 'reset'
+                    })
                 }
             } catch (error) {
                 setIsLoading(false)

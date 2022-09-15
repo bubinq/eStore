@@ -1,0 +1,55 @@
+.mainWrapper {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.headingSection {
+    margin: 0 auto;
+    background-color: rgb(254, 245, 255);
+    color: rgb(39, 7, 84);
+    padding-top: 80px;
+    padding-left: 130px;
+    font-size: 1.6rem;
+    caret-color: transparent;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.headingContent {
+    max-width: 620px;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.heading {
+    line-height: 77px;
+    margin-bottom: 0;
+}
+
+.underHeading{
+    font-size: 1.1rem;
+    line-height: 26px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.goToShop {
+    border: none;
+    width: 70%;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    border-radius: 40px;
+    background-color: #00B0FF;
+    color: white;
+    padding: 16px 20px;
+    letter-spacing: 1.3px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.goToShop:hover {
+    background-color: #0199e0;
+}
