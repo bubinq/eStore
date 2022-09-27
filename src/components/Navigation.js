@@ -53,14 +53,14 @@ export const Navigation = () => {
                         <h3 className={oldStyles.welcomeMsg}>Welcome, {user.email}</h3>
                         <Link to='/' className={oldStyles.logOut}>Home</Link>
                         <Link to='/store' className={oldStyles.logOut}>Store</Link>
-                        <Link to='' onClick={cartModalHandler}><img src="http://localhost:3000/shopping.svg" className={oldStyles.shoppingBasket} alt='Prosto snimka'></img></Link>
+                        <Link to='' onClick={cartModalHandler}><img src="/shopping.svg" className={oldStyles.shoppingBasket} alt='Prosto snimka'></img></Link>
                         <Link to='' onClick={logoutHandler} className={oldStyles.logOut}>Log Out</Link>
                     </div>
                     :
                     <div className={oldStyles.loginWrapper}>
                         <Link to='/' className={oldStyles.logOut}>Home</Link>
                         <Link to='/store' className={oldStyles.logOut}>Store</Link>
-                        <Link to='' onClick={cartModalHandler}><img src="http://localhost:3000/shopping.svg" className={oldStyles.shoppingBasket} alt='Prosto snimka'></img></Link>
+                        <Link to='' onClick={cartModalHandler}><img src="/shopping.svg" className={oldStyles.shoppingBasket} alt='Prosto snimka'></img></Link>
                         <Link to='' onClick={() => setToggleModal(!toggleModal)} className={oldStyles.logOut}>Log In</Link>
                     </div>
 
