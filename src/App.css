@@ -220,3 +220,21 @@
       transform: scale(1.5);
     }
   }
+
+  @media screen and (max-width: 574px) {
+    .modal-content {
+      min-width: 260px;
+    }
+    .text-wrapper {
+      margin: 12px auto;
+    }
+    .text-wrapper span {
+      font-size: 1.1rem;
+    }
+    .modal-content input {
+      padding: 12px 4px;
+    }
+    .labels {
+      left: 6%;
+    }
+  }
