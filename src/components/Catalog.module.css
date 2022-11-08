@@ -43,6 +43,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    transition: all 0.2s ease;
 }
 
 .welcomeMsg {
@@ -65,4 +66,27 @@
 
 .logoWrapper {
     margin-top: 100px;
+}
+
+@media screen and (max-width: 888px) {
+   .welcomeMsg {
+    display: none;
+   } 
+   .loginWrapper {
+    justify-content: center;
+   }
+}
+
+@media screen and (max-width: 574px) {
+    .header {
+        width: 90%;
+    }
+    .logOut {
+        font-size: 1.1rem;
+        margin: 10px;
+    }
+
+    .mainWrapper {
+        grid-template-columns: repeat(1, 320px);
+    }
 }

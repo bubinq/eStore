@@ -1,3 +1,7 @@
+body {
+    margin: 0;
+}
+
 .mainWrapper {
     display: flex;
     width: 80%;
@@ -52,4 +56,13 @@
 
 .goToShop:hover {
     background-color: #0199e0;
+}
+
+@media screen and (max-width: 574px) {
+    .headingSection {
+        padding-top: 0px;
+        padding-left: 25px;
+        padding-right: 25px;
+        font-size: 1.4rem;
+    }
 }

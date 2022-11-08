@@ -214,3 +214,25 @@
     border: none;
     outline: solid #00B0FF 2px;
 }
+
+@media screen and (max-width: 574px) {
+    .mainWrapper {
+        display: block;
+    }
+    .profileData {
+        min-width: 240px;
+        max-width: 574px;
+    }
+    .names {
+        justify-content: space-between;
+    }
+    .nameWrapper {
+        width: 49%;
+    }
+    .surnameWrapper {
+        width: 45%;
+    }
+    .orderBtn {
+        font-size: 1.6rem;
+    }
+}

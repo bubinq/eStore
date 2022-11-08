@@ -72,3 +72,10 @@
 .purchaseBtn:hover{
     background-color: #0199e0;
 }
+
+@media screen and (max-width: 574px) {
+    .cartModal {
+        max-width: 50%;
+        z-index: 1000;
+    }  
+}

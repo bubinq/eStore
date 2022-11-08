@@ -139,3 +139,56 @@
     cursor: pointer;
     transition: all 0.3s ease;
 }
+
+@media screen and (max-width: 574px) {
+    .productWrapper {
+        display: flex;
+        flex-direction: column;
+        margin-top: 90px;
+    }
+    .productWrapper img {
+        margin: 0 auto;
+        width: 80%;
+        height: 80%;
+    }
+    .description {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .description h1 {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .text {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-align: center;
+    }
+    .price {
+        font-size: 1.8rem;
+    }
+    .formWrapper {
+        margin-top: 70px;
+    }
+    .reviewBtn {
+        font-size: 1.3rem;
+    }
+    .form {
+        width: 100%;
+    }
+    .inputUser {
+        margin-top: 8px;
+    }
+    .inputComment {
+        margin-top: 8px;
+    }
+    .sendBtn {
+        width: 100%;
+    }
+    .reviewBtn {
+        margin-bottom: 20px;
+    }
+}

@@ -16,6 +16,21 @@
     margin-top: 25px;
 }
 
+.cardInfo {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cardInfo p {
+    text-align: center;
+}
+
+.cardInfo span {
+    font-weight: bold;
+}
+
 .buttonsWrapper{
     margin-top: 10px;
     width: fit-content;
